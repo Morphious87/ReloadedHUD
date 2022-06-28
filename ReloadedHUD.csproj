@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57445610-0892-47C3-BE16-453172104123}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReloadedHUD</RootNamespace>
+    <AssemblyName>ReloadedHUD</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\SteamLibrary\steamapps\common\Enter the Gungeon\EtG_Data\Managed\ModBackup\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp.Base.mm">
+      <HintPath>D:\SteamLibrary\steamapps\common\Enter the Gungeon\EtG_Data\Managed\Assembly-CSharp.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\..\Desktop\MonoMod\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\Desktop\MonoMod\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\Enter the Gungeon\EtG_Data\Managed\ModBackup\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule.Base.mm">
+      <HintPath>D:\SteamLibrary\steamapps\common\Enter the Gungeon\EtG_Data\Managed\UnityEngine.CoreModule.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\EtG_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleCommandsManager.cs" />
+    <Compile Include="HooksManager.cs" />
+    <Compile Include="RHController.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\CompanionBuilder.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\CustomSynergies.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\FakePrefab\FakePrefab.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\FakePrefab\FakePrefabHooks.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\ItemBuilder.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\ResourceExtractor.cs" />
+    <Compile Include="Utils\APIs\ItemAPI\SpriteBuilder.cs" />
+    <Compile Include="Utils\SRainbowModifier.cs" />
+    <Compile Include="Utils\SButtonRect.cs" />
+    <Compile Include="Utils\MorphUtils.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\BulletSpeed.png" />
+    <EmbeddedResource Include="Resources\StatIcons\ChargeTime.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Coolness.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Curse.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Damage.png" />
+    <EmbeddedResource Include="Resources\StatIcons\DPS.png" />
+    <EmbeddedResource Include="Resources\StatIcons\FireDelay.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Projectiles.png" />
+    <EmbeddedResource Include="Resources\StatIcons\ReloadTime.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\Range.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Visibility_Off.png" />
+    <EmbeddedResource Include="Resources\Visibility_On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\ClipSize.png" />
+    <EmbeddedResource Include="Resources\StatIcons\Spread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\BulletSize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\AmmoCapacity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Infinity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatIcons\Knockback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
