@@ -244,7 +244,6 @@ namespace ReloadedHUD
 
             void ShowDifference(float cur, float prev, bool whole = false)
             {
-                MorphUtils.LogError($"cur: {cur}, prev: {prev}, whole: {whole}, frame: " + Time.frameCount);
                 float diff;
                 bool positive = cur - prev > 0;
                 bool good = positive ^ lessIsBetter;
