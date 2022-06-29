@@ -15,6 +15,11 @@ namespace ReloadedHUD
 
         public override void Init()
         {
+            
+        }
+
+        public override void Start()
+        {
             try
             {
                 HooksManager.Init();
@@ -31,11 +36,8 @@ namespace ReloadedHUD
             {
                 MorphUtils.LogRainbow($"{MOD_NAME} v{VERSION} started successfully.");
             }
-        }
-
-        public override void Start()
-        {
             HooksManager.PostInit();
+
         }
 
         public override void Exit()
