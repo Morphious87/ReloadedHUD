@@ -11,7 +11,7 @@ namespace ReloadedHUD
     public class Module : ETGModule
     {
         public static readonly string MOD_NAME = "Reloaded HUD";
-        public static readonly string VERSION = "1.0";
+        public static readonly string VERSION = "1.0.1";
 
         public override void Init()
         {
@@ -37,7 +37,6 @@ namespace ReloadedHUD
                 MorphUtils.LogRainbow($"{MOD_NAME} v{VERSION} started successfully.");
             }
             HooksManager.PostInit();
-
         }
 
         public override void Exit()
