@@ -5,43 +5,40 @@ using System.Text;
 using System.Reflection;
 using UnityEngine;
 using SGUI;
+using BepInEx;
 
 namespace ReloadedHUD
 {
-    public class Module : ETGModule
+    [BepInDependency("etgmodding.etg.mtgapi")]
+    [BepInPlugin(GUID, NAME, VERSION)]
+    public class Module : BaseUnityPlugin
     {
-        public static readonly string MOD_NAME = "Reloaded HUD";
-        public static readonly string VERSION = "1.0.1";
+        public const string GUID = "morphious86.etg.reloadedhud";
+        public const string NAME = "Reloaded HUD";
+        public const string VERSION = "1.1.1";
 
-        public override void Init()
+        public void Start()
         {
-            
+            ETGModMainBehaviour.WaitForGameManagerStart(GMStart);
         }
 
-        public override void Start()
+        public void GMStart(GameManager g)
         {
             try
             {
                 HooksManager.Init();
+                HooksManager.PostInit();
 
                 ConsoleCommandsManager.Init();
                 SettingsManager.LoadSettings();
                 ETGModMainBehaviour.Instance.gameObject.AddComponent<RHController>();
+
+                MorphUtils.LogRainbow($"{NAME} v{VERSION} started successfully.");
             }
             catch (Exception e)
             {
-                MorphUtils.LogError("Reloaded HUD failed to initialize!", e);
+                MorphUtils.LogError($"{NAME} v{VERSION} failed to initialize!", e);
             }
-            finally
-            {
-                MorphUtils.LogRainbow($"{MOD_NAME} v{VERSION} started successfully.");
-            }
-            HooksManager.PostInit();
-        }
-
-        public override void Exit()
-        {
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ReloadedHUD
         {
             ETGModConsole.Commands.AddGroup(prefix, (args) =>
             {
-                MorphUtils.LogRainbow("Reloaded HUD is being made by Morphious86#6617 on Discord!");
+                MorphUtils.LogRainbow($"{Module.NAME} is being made by Morphious86#6617 on Discord!");
             });
 
             AddCommand("combat_opacity", (args) => TryParseFloat(args[0], (opacity) =>

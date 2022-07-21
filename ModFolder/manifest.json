@@ -1,0 +1,9 @@
+{
+    "name": "Reloaded_HUD",
+    "version_number": "1.1.1",
+	"website_url": "https://github.com/Morphious87/ReloadedHUD",
+    "description": "Adds a stylish stats display inspired by the one found in The Binding of Isaac",
+    "dependencies": [
+        "MtG_API-Mod_the_Gungeon_API-1.1.3"
+    ]
+}
